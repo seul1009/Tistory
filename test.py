@@ -15,6 +15,8 @@ for entry in entries[:POST_COUNT]:
     published_date = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z').strftime('%Y-%m-%d')
     posts.append(f"- {published_date} [{entry.title}]({entry.link})")
 
+print(posts)
+
 readme_path = './README.md'
 
 # open README.md

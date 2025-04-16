@@ -40,8 +40,8 @@ jobs:
           
       - name: Commit README
         run: |
-          git config --global user.email "이메일"
-          git config --global user.name "이름"
+          git config --global user.email "tmfdl8414@naver.com"
+          git config --global user.name "SEULI"
           git add .
           git commit -m "[auto] $(date -u +"%Y-%m-%d") Blog Posting List Update" || exit 0
           git push origin main

@@ -38,10 +38,13 @@ jobs:
       - name: Update README
         run: python update-post.py
           
+      - name: Set up push authentication
+        run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        
       - name: Commit README
         run: |
           git config --global user.email "tmfdl8414@naver.com"
           git config --global user.name "SEULI"
-          git add .
-          git commit -m "[auto] $(date -u +"%Y-%m-%d") Blog Posting List Update" || exit 0
+          git add README.md
+          git commit -m "[auto] $(date -u +"%Y-%m-%d") Blog Posting List Update" || echo "No changes to commit"
           git push origin main

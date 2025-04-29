@@ -36,7 +36,7 @@ jobs:
           pip install feedparser
       
       - name: Update README
-        run: python update-post.py
+        run: python test.py
           
       - name: Set up push authentication
         run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}

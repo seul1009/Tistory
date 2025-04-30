@@ -5,7 +5,6 @@ import urllib.request
 POST_COUNT = 5
 BLOG_RSS_URL = "https://seulow-down.tistory.com/rss"
 
-# 캐시 우회를 위해 현재 시간으로 쿼리 스트링 추가
 rss_url_with_timestamp = BLOG_RSS_URL + "?" + datetime.now().strftime("%Y%m%d%H%M%S")
 req = urllib.request.Request(rss_url_with_timestamp, headers={"Cache-Control": "no-cache"})
 feed = feedparser.parse(urllib.request.urlopen(req))
